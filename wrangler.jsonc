@@ -1,0 +1,13 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "cloudflare-workers-full-stack-starter",
+	"compatibility_date": "2026-10-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"main": "./src/index.tsx",
+	"observability": {
+		"enabled": true,
+	},
+	"assets": {
+		"directory": "public",
+	},
+}

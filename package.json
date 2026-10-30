@@ -1,0 +1,27 @@
+{
+	"name": "cloudflare-workers-full-stack-starter",
+	"type": "module",
+	"scripts": {
+		"dev": "$npx_execpath vite",
+		"build": "$npx_execpath vite build",
+		"preview": "$npm_execpath run build && $npx_execpath vite preview",
+		"deploy": "$npm_execpath run build && $npx_execpath wrangler deploy",
+		"check": "$npx_execpath tsc",
+		"format": "$npx_execpath prettier --write ."
+	},
+	"dependencies": {
+		"hono": "^4.13.14",
+		"tailwindcss": "^4.3.3"
+	},
+	"devDependencies": {
+		"@cloudflare/vite-plugin": "^1.44.0",
+		"@cloudflare/workers-types": "^5.20261029.1",
+		"@tailwindcss/vite": "^4.3.3",
+		"@types/node": "^26.6.6",
+		"prettier": "^3.9.10",
+		"typescript": "^7.0.2",
+		"vite": "^8.1.4",
+		"vite-ssr-components": "^0.8.0",
+		"wrangler": "^4.110.0"
+	}
+}
