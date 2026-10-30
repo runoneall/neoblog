@@ -14,17 +14,20 @@ export default (async ({ c, children }) => {
 
 	return (
 		<>
-			<div class="m-4 font-mono">
-				<div class="flex items-center overflow-y-auto text-nowrap gap-x-2 scrollbar-thin">
-					<a class="text-black underline font-bold" href="/">
-						{c.var.config.site_name}
-					</a>
-					{pages.map((page) => (
-						<a class="text-blue-800 underline font-bold hover:text-blue-400" href={`/page/${page.name}`}>
+			<div class="m-2 break-all wrap-break-word text-justify font-mono">
+				<a class="text-blue-600 underline" href="/">
+					{c.var.config.site_name}
+				</a>
+				<span>.</span>
+				<hr class="my-2" />
+				{pages.map((page) => (
+					<>
+						<a class="text-blue-600 underline" href={`/page/${page.name}`}>
 							{page.title}
 						</a>
-					))}
-				</div>
+						<span> </span>
+					</>
+				))}
 				<hr class="my-2" />
 				{children}
 			</div>

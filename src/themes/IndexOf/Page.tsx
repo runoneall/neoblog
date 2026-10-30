@@ -30,7 +30,7 @@ export default (async ({ c, name, type }) => {
 			<title>
 				{result.title} | {c.var.config.site_name}
 			</title>
-			<a class="font-extrabold underline text-blue-800 text-4xl" href={`/${type}/${name}`}>
+			<a class="text-blue-600 underline font-extrabold text-4xl" href={`/${type}/${name}`}>
 				{result.title}
 			</a>
 			<div class="prose mt-4 max-w-none">{raw(await renderHtml(result.content))}</div>

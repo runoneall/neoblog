@@ -24,46 +24,44 @@ export default (async ({ c, page }) => {
 			<title>
 				第 {page} 页 | {c.var.config.site_name}
 			</title>
-			<div class="overflow-x-auto scrollbar-thin">
-				<ul class="list-disc ml-4 text-nowrap">
-					{posts_in_page.map((post) => (
-						<li>
-							<a class="text-xl font-bold text-blue-900 hover:text-blue-600 underline" href={`/post/${post.name}`}>
-								{post.title}
-							</a>
-						</li>
-					))}
-				</ul>
-			</div>
-			<hr class="my-2" />
-			<div class="flex items-center overflow-x-auto scrollbar-thin text-nowrap gap-x-2 font-bold">
-				<span>
-					第 {page}/{total_page} 页
-				</span>
-				{page == 1 ? (
-					<span>上一页</span>
-				) : (
-					<a class="underline text-blue-800 hover:text-blue-600" href={`/pages/${page - 1}`}>
-						上一页
-					</a>
-				)}
-				{page == total_page ? (
-					<span>下一页</span>
-				) : (
-					<a class="underline text-blue-800 hover:text-blue-600" href={`/pages/${page + 1}`}>
-						下一页
-					</a>
-				)}
-				{Array.from({ length: total_page }, (_, i) => {
-					i += 1;
-
-					return (
-						<a class="underline text-blue-800 hover:text-blue-600" href={`/pages/${total_page}`}>
-							第 {i} 页
+			<ul class="ml-4 list-disc">
+				{posts_in_page.map((post) => (
+					<li>
+						<a class="text-blue-600 underline" href={`/post/${post.name}`}>
+							{post.title}
 						</a>
-					);
-				})}
-			</div>
+					</li>
+				))}
+			</ul>
+			<hr class="my-2" />
+			<span>
+				第 {page}/{total_page} 页
+			</span>
+			<span> </span>
+			{page == 1 ? (
+				<span>上一页</span>
+			) : (
+				<a class="text-blue-600 underline" href={`/pages/${page - 1}`}>
+					上一页
+				</a>
+			)}
+			<span> </span>
+			{page == total_page ? (
+				<span>下一页</span>
+			) : (
+				<a class="text-blue-600 underline" href={`/pages/${page + 1}`}>
+					下一页
+				</a>
+			)}
+			<span> </span>
+			{Array.from({ length: total_page }, (_, i) => (
+				<>
+					<a class="text-blue-600 underline" href={`/pages/${i + 1}`}>
+						第 {i + 1} 页
+					</a>
+					<span> </span>
+				</>
+			))}
 		</>
 	);
 }) as Theme['Main'];
