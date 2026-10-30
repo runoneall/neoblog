@@ -3,7 +3,7 @@
 	"name": "neoblog",
 	"compatibility_date": "2026-10-24",
 	"compatibility_flags": ["nodejs_compat"],
-	"main": "./src/index.tsx",
+	"main": "./src/index.ts",
 	"observability": {
 		"enabled": true,
 	},
