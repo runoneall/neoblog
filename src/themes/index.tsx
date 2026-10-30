@@ -33,13 +33,13 @@ app.get('/pages/:page{[1-9]+}', (c) => {
 	);
 });
 
-app.get('/:_{page|post}/:name{[a-zA-Z0-9_-]+}', (c) => {
-	const { name } = c.req.param();
+app.get('/:type{page|post}/:name{[a-zA-Z0-9_-]+}', (c) => {
+	const { type, name } = c.req.param();
 	const theme = themes[c.var.config.theme_name];
 
 	return c.render(
 		<theme.Layout c={c}>
-			<theme.Page c={c} name={name} />
+			<theme.Page c={c} name={name} type={type as 'page' | 'post'} />
 		</theme.Layout>,
 	);
 });

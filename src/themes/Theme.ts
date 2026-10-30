@@ -7,7 +7,7 @@ import { ThemeVariable } from '../theme';
 type Theme = {
 	Layout: FC<{ c: Context<{ Variables: DBVariable & ConfigVariable & ThemeVariable }>; children: any }>;
 	Main: FC<{ c: Context<{ Variables: DBVariable & ConfigVariable & ThemeVariable }>; page: number }>;
-	Page: FC<{ c: Context<{ Variables: DBVariable & ConfigVariable & ThemeVariable }>; name: string }>;
+	Page: FC<{ c: Context<{ Variables: DBVariable & ConfigVariable & ThemeVariable }>; name: string; type: 'page' | 'post' }>;
 	Search: FC<{ c: Context<{ Variables: DBVariable & ConfigVariable & ThemeVariable }>; query: string }>;
 	NotFound: FC<{ c: Context<{ Variables: DBVariable & ConfigVariable & ThemeVariable }> }>;
 };

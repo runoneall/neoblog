@@ -1,17 +1,16 @@
-import { eq } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 import { PageTable } from '../../page';
 import Theme from '../Theme';
 import NotFound from './NotFound';
 
-export default (async ({ c, name }) => {
+export default (async ({ c, name, type }) => {
 	const result = await c.var.db
 		.select({
-			type: PageTable.type,
 			title: PageTable.title,
 			content: PageTable.content,
 		})
 		.from(PageTable)
-		.where(eq(PageTable.name, name))
+		.where(and(eq(PageTable.name, name), eq(PageTable.type, type)))
 		.get();
 
 	if (!result) return NotFound({ c });
