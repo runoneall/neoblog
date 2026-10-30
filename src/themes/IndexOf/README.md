@@ -1,0 +1,1 @@
+- magnification: 基于 config.post_per_page 的放大倍数
