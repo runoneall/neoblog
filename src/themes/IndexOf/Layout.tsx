@@ -15,10 +15,15 @@ export default (async ({ c, children }) => {
 	return (
 		<>
 			<div class="m-2 break-all wrap-break-word text-justify font-mono">
-				<a class="text-blue-600 underline" href="/">
-					{c.var.config.site_name}
-				</a>
-				<span>.</span>
+				<div class="flex items-center">
+					<a class="text-blue-600 underline" href="/">
+						{c.var.config.site_name}
+					</a>
+					<span class="flex-1">.</span>
+					<form class="inline-block" action="/search" method="get">
+						<input class="p-1 outline-none" type="text" name="query" placeholder="输入关键字搜索" />
+					</form>
+				</div>
 				<hr class="my-2" />
 				{pages.map((page) => (
 					<>
