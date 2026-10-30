@@ -10,6 +10,7 @@
 		"format": "$npx_execpath prettier --write ."
 	},
 	"dependencies": {
+		"drizzle-orm": "^1.0.0-rc.5",
 		"hono": "^4.13.14",
 		"tailwindcss": "^4.3.3"
 	},

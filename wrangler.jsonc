@@ -10,4 +10,10 @@
 	"assets": {
 		"directory": "public",
 	},
+	"d1_databases": [
+		{
+			"binding": "db",
+			"database_name": "neoblog-db",
+		},
+	],
 }
