@@ -3,9 +3,10 @@ import { DBVariable } from '../db';
 import { ConfigVariable } from '../config';
 import { ThemeVariable } from '../theme';
 import Theme from './Theme';
+import IndexOf from './IndexOf';
 
 const app = new Hono<{ Variables: DBVariable & ConfigVariable & ThemeVariable }>();
-const themes: Record<string, Theme> = {};
+const themes: Record<string, Theme> = { IndexOf };
 
 app.use(async (c, next) => {
 	return themes[c.var.config.theme_name] ? await next() : c.text(`theme '${c.var.config.theme_name}' not found`, 404);
