@@ -10,6 +10,8 @@
 		"format": "$npx_execpath prettier --write ."
 	},
 	"dependencies": {
+		"@comark/html": "^0.8.1",
+		"@tailwindcss/typography": "^0.5.20",
 		"drizzle-orm": "^1.0.0-rc.5",
 		"hono": "^4.13.14",
 		"tailwindcss": "^4.3.3"
