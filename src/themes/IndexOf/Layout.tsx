@@ -25,6 +25,10 @@ export default (async ({ c, children }) => {
 					</form>
 				</div>
 				<hr class="my-2" />
+				<a class="text-blue-600 underline" href="/admin">
+					登录
+				</a>
+				<span> </span>
 				{pages.map((page) => (
 					<>
 						<a class="text-blue-600 underline" href={`/page/${page.name}`}>
